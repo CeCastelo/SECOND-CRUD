@@ -1,5 +1,6 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller"
+    
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
@@ -9,7 +10,7 @@ sap.ui.define([
 
         return Controller.extend("crud2.controller.Main", {
             onInit: function () {
-
+                
             }
         });
     });
