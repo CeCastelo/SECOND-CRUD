@@ -1,0 +1,42 @@
+<core:FragmentDefinition 
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:c="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:ui="sap.ui"
+    >
+
+    <Dialog title="{/NewOrEdit}" afterClose="onAfterClose" class="sapUiSizeCompact" contentWidth="30%">
+        <Panel id="itemPanel" expanded="true" width="100%">
+            <f:SimpleForm id="fragmentForm" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"
+                >
+                <f:content>
+                    <Label text="{i18n>column_id}" labelFor="IDfrag" />
+                    <Input id="IDfrag" type="Text" value="{form>/ID}" required="true" enabled="false"/>
+                    
+                    <Label text="{i18n>column_user}" labelFor="Userfrag" />
+                    <Input id="Userfrag" type="Text" value="{form>/User}" required="true"  />
+
+                    <Label text="{i18n>column_access}" labelFor="accessfrag" />
+                    <ComboBox xmlns="sap.m" id="accessfrag" required="true" value="{form>/Access}" selectedKey="{form>/Access}">
+                        <items>
+                             <core:Item xmlns:core="sap.ui.core" key="Admin" 
+                                text="Admin"  id="item1"/>
+                             <core:Item xmlns:core="sap.ui.core" key="Simple User" 
+                                text="Simple User" id="item2"/>
+                              
+                        </items>
+                    </ComboBox>
+                </f:content>
+            </f:SimpleForm>
+           
+        </Panel>
+       <buttons>
+        <Button text="{i18n>bt_save}" type="Accept" icon="sap-icon://accept" press="onSave" visible="true"/>
+        <Button text="{i18n>bt_cancel}" type="Reject" icon="sap-icon://decline" press="onCancelEdit" />
+       </buttons>
+        
+    </Dialog>
+
+</core:FragmentDefinition>
